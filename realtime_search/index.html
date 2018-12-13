@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Real time search</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <p style="font-size: 30px">Type keyword to search by Qiita</p>
+    <div class="iptxt">
+      <input type="text" v-model:value="keyword" placeholder="please type keyword">
+      <i class="fas fa-search"></i>
+    </div>
+    <p>{{ message }}</p>
+    <ul>
+      <li v-for="item in items">
+        <a v-bind:href="item.url" target="__blank">{{ item.title }}</a> Likes: {{ item.likes_count }}
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
